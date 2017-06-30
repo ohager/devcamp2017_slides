@@ -1,0 +1,25 @@
+
+function deepFreeze(obj) {
+	for(let pn in obj) {
+		if (typeof obj[pn] === 'object')
+			deepFreeze(obj[pn])
+	}
+	return Object.freeze(obj)
+}
+
+class ApplicationStateManager {
+	
+	constructor(){
+		// ...
+		this._state = {};
+	}
+	/* ... */
+	update(fn){
+		let s = this._state;
+		s = deepFreeze(Object.assign({}, s, fn(s)))
+		notify(this._listeners, s)
+	}
+	
+	getState() { return this._state } // immutable, YAY!
+}
+

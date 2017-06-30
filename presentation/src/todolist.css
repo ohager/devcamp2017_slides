@@ -1,0 +1,34 @@
+.todolist-slide{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.todolist-slide img.todolist{
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+
+}
+
+.todolist-slide img.todolist.show{
+    width: 40%;
+    transition: all 0.5s;
+}
+
+.todolist-slide .code {
+    margin-left: 1em;
+    overflow: hidden;
+    width: 100%;
+    opacity: 0.0;
+    transition: all 1.5s;
+    transition-delay: 0.25s;
+}
+
+.todolist-slide .code.show {
+    overflow: hidden;
+    opacity: 1.0;
+    transition: all 1.5s;
+    transition-delay: 0.25s;
+}
+

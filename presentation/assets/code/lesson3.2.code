@@ -1,0 +1,23 @@
+class ItemList extends Component {
+	
+	constructor() {
+		this.state.items = Store.getState().items
+	}
+	
+	// assume this method is called when our store was updated
+	onStoreUpdate() {
+		this.setState({items: Store.getState().items })
+	}
+	
+	addItem(item) {
+		let items = this.state.items
+		items.push(item) // Bad 💩
+	}
+	
+	render() {
+		return (
+			<ItemEditor onAdd = {this.addItem} />
+			/*...*/
+		)
+	}
+}

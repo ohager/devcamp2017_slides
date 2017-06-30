@@ -1,0 +1,38 @@
+function notify(listeners, state) {
+	for(const pn in listeners){
+		const l = listeners[pn]
+		l.f.call(l.c, state)
+	}
+}
+
+class ApplicationStateManager {
+	
+	constructor(){
+		this._listenerCount = 0;
+		this._listeners = {};
+		this._state = {};
+	}
+	
+	listen(fn, ctx) {
+		// 🐱‍👤 use object map instead of array (is smaller and faster)
+		this._listeners[++this._listenerCount] = { f: fn, c: ctx }
+		return this._listenerCount
+	}
+	
+	unlisten(listenerId) {
+		delete this._listeners[listenerId];
+	}
+	
+	update(args){
+		//... update stuff
+		notify(this._listeners, this._state)
+	}
+	
+	getState() { return this._state }
+}
+
+// Usage
+const mgr = new ApplicationStateManager();
+const handler = mgr.listen( (s) => { console.log("state", s) }, null )
+mgr.update( {} ) // fake update here!
+mgr.unlisten(handler);

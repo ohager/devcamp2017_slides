@@ -1,0 +1,33 @@
+const normalizedPosts = {
+	"posts": [
+		{
+			"id": 123,
+			"authorId": 1,
+			"title": "My awesome blog post",
+			"comments": [324, 325]
+		}
+		// ... more posts
+	],
+	"comments": [
+		{
+			"id": 324,
+			"authorId": 2
+		}, {
+			"id": 325,
+			"authorId": 5
+		}
+	],
+	"authors": [
+		{
+			"id": 1,
+			"name": "Paul"
+		},
+		{
+			"id": 2,
+			"name": "Nicole"
+		}, {
+			"id": 5,
+			"name": "Klaus"
+		}
+	]
+};

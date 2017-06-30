@@ -1,0 +1,19 @@
+class ApplicationStateManager {
+	
+	constructor(){
+		this._state = {};
+	}
+	
+	update(args){
+		//... update stuff
+		window.dispatchEvent(new CustomEvent('stateUpdate', { 'detail': this._state }) )
+	}
+	
+	getState() { return this._state }
+}
+
+// Usage
+const mgr = new ApplicationStateManager();
+window.addEventListener('stateUpdate', e => { console.log('state updated', e.detail)} )
+mgr.update( {} ) // fake update here!
+window.removeEventListener('stateUpdate');

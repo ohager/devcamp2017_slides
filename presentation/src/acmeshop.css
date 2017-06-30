@@ -1,0 +1,33 @@
+.acmeshop-slide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.acmeshop-slide img.shop{
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+
+}
+
+.acmeshop-slide img.shop.show{
+    width: 25%;
+    transition: all 0.5s;
+}
+
+.acmeshop-slide img.tree {
+    opacity: 0.0;
+    width: 0%;
+    transition: all 1.5s;
+    transition-delay: 0.25s;
+}
+
+.acmeshop-slide img.tree.show {
+
+    width: 75%;
+    opacity: 1.0;
+    transition: all 1.5s;
+    transition-delay: 0.25s;
+}
+

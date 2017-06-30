@@ -1,0 +1,14 @@
+constructor() {
+	// Copy by reference for immutable data is ok!
+	this.state.items = Store.getImmutableState().get('items')
+}
+
+// ...
+
+addItem(item) {
+	// you cannot simply add an item to the list, you need to use the API
+	let copiedItems = Immutable(this.state.items).asMutable()
+	copiedItems.push(item)
+	// assumes that update() makes the state somehow immutable
+	Store.update({items: copiedItems})
+}

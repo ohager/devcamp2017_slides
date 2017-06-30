@@ -1,0 +1,7 @@
+render(){
+	return (
+		this.state.userRole === 'admin' ?
+			<AdminComponent/> :
+			<UserComponent/>
+	)
+}

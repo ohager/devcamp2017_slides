@@ -1,0 +1,14 @@
+var _suggestions = {};
+
+var suggestionStore = {
+	// get the suggestions for specific component
+	getSuggestions : function(componentId){ // WTF?
+		return _suggestions[componentId]; // WTF?
+	},
+	// called on dispatch('fetchSuggestions',...)
+	// -- nanoflux uses a convention based auto-mapping
+	onFetchSuggestions : function(data){
+		_suggestions[data.componentId] = Immutable(data.suggestions); // WTF?
+		this.notifyListeners();
+	}
+};

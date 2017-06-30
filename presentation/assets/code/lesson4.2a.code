@@ -1,0 +1,1 @@
+posts.find( p => p.id === 123).author.name = 'Dude';

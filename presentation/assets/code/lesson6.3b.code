@@ -1,0 +1,11 @@
+function addItem(newItem){
+	
+	appStateManager.update( state => {
+		// need to copy the state, as it is immutable
+		let items = _.cloneDeep(state.items || []);
+		items.push(newItem);
+		return {items: items}; // return new state slice
+	})
+	
+}
+

@@ -1,0 +1,5 @@
+addItem(item) {
+	let items = _.cloneDeep(this.state.items)
+	items.push(item) // store won't be mutated
+	Store.update({items: items})
+}

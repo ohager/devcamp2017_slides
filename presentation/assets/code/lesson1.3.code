@@ -1,0 +1,16 @@
+render(){
+	function calculateTotalCost(items){
+		return items.reduce(
+			(p,item) => p+(item.price*item.quantity), 0.0
+		).toFixed(2);
+	}
+	
+	return (
+		<div>
+			<CartItemList items={this.state.cartItems}/>
+			<div className='cart-total'>{
+				calculateTotalCost(this.state.cartItems) + '$'
+			}<div/>
+		<div/>
+	)
+}

@@ -1,0 +1,6 @@
+function update(oldState, newState){
+	for(let p in newState){
+		oldState[p] = newState[p];
+	}
+	return oldState;
+}

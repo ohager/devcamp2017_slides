@@ -1,0 +1,4 @@
+// update
+const post = posts.find( p => p.id === 123);
+// seamless-immutable API
+const updatedPost = Immutable.setIn(post, ["author", "name"], "Elmar");

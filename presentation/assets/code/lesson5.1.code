@@ -1,0 +1,14 @@
+// Action Creator - ES5 old school style, babe
+function fetchSuggestions(componentId, url, searchTerm){
+	var suggestionService = new GenericService(url);
+	suggestionService.getAll({
+		textFilter: searchTerm,
+		//...
+	})
+	.then(function (suggestions) {
+		this.dispatch('fetchSuggestions', {
+			componentId : componentId, // Hu, I need to manage the component instance!
+			suggestions : suggestions
+		});
+	}.bind(this));
+}

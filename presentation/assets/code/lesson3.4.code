@@ -1,0 +1,5 @@
+// optimize our rendering process (React-wise)
+shouldComponentUpdate(nextProps, nextState){
+	// comparing by reference
+	return this.state.items !== nextState.items;
+}

@@ -1,0 +1,4 @@
+// insert
+const atIndex = posts.findIndex( p => p.id === 123);
+const newPost = { /* ... */ };
+posts.slice(0, atIndex).concat(newPost).concat(posts.slice(atIndex+1)); // 😲 WTF?
