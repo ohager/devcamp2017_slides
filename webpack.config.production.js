@@ -10,7 +10,7 @@ module.exports = {
 	output: {
 		path: path.join(__dirname, "dist"),
 		filename: "bundle.js",
-		publicPath: "/dist/devcamp2017_slides/"
+		publicPath: "/devcamp2017_slides/dist/"
 	},
 	plugins: [
 		new webpack.optimize.OccurrenceOrderPlugin(),
